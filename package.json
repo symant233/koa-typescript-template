@@ -1,0 +1,36 @@
+{
+  "name": "koa-typescript-template",
+  "version": "1.0.0",
+  "description": "REST API template using Koa2, TypeScript and TypeORM.",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:w": "tsc -w",
+    "start": "tsc && node dist"
+  },
+  "keywords": [
+    "koa2",
+    "typescript",
+    "typeorm"
+  ],
+  "author": "symant233",
+  "license": "MIT",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.2",
+    "@types/koa-router": "^7.4.4",
+    "@types/node": "^12.20.16"
+  },
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "mysql": "^2.18.1",
+    "typeorm": "^0.2.34",
+    "reflect-metadata": "^0.1.13"
+  }
+}

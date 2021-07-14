@@ -1,19 +1,24 @@
-import Koa, { Context } from 'koa';
-import Router from 'koa-router';
+import 'reflect-metadata';
+import { Connection, createConnection } from 'typeorm';
+import Koa from 'koa';
+import koaLogger from 'koa-logger';
 import bodyParser from 'koa-bodyparser';
+import koaHelmet from 'koa-helmet';
+import router from './routers';
+import db from './database';
 
-// create koa app
-const app: Koa = new Koa();
-const router = new Router();
+createConnection()
+  .then(async (conn: Connection) => {
+    console.log('MySQL connected!');
+    db.connect(conn);
 
-router.get('root', '/', async (ctx: Context) => {
-  ctx.body = 'server running';
-});
-
-// run app
-app.use(bodyParser());
-app.use(router.routes());
-app.use(router.allowedMethods());
-app.listen(3000);
-
-console.log('Koa running on http://localhost:3000');
+    const app: Koa = new Koa();
+    app.use(koaHelmet());
+    app.use(koaLogger());
+    app.use(bodyParser());
+    app.use(router.routes());
+    app.listen(3000, () => {
+      console.log('Koa running on http://localhost:3000');
+    });
+  })
+  .catch((error) => console.log('TypeORM connection error: ', error));

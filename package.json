@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "build:w": "tsc -w",
-    "start": "tsc && node dist"
+    "start": "tsc && node dist",
+    "dev": "export NODE_ENV=development; nodemon src/index.ts"
   },
   "keywords": [
     "koa2",
@@ -14,6 +15,10 @@
     "typeorm"
   ],
   "author": "symant233",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/symant233/koa-typescript-template.git"
+  },
   "license": "MIT",
   "prettier": {
     "singleQuote": true,
@@ -22,15 +27,22 @@
   "devDependencies": {
     "@types/koa": "^2.13.4",
     "@types/koa-bodyparser": "^4.3.2",
+    "@types/koa-helmet": "^6.0.4",
+    "@types/koa-jwt": "^3.3.0",
+    "@types/koa-logger": "^3.1.1",
     "@types/koa-router": "^7.4.4",
-    "@types/node": "^12.20.16"
+    "@types/node": "^14.17.5"
   },
   "dependencies": {
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
+    "koa-helmet": "^6.1.0",
+    "koa-jwt": "^4.0.1",
+    "koa-logger": "^3.2.1",
     "koa-router": "^10.0.0",
     "mysql": "^2.18.1",
-    "typeorm": "^0.2.34",
-    "reflect-metadata": "^0.1.13"
+    "nodemon": "^2.0.12",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.34"
   }
 }

@@ -1,0 +1,17 @@
+@base = http://localhost:3000
+
+### Get all users
+GET {{base}}/users
+
+### Create a user
+POST {{base}}/users
+content-type: application/json
+
+{
+    "name": "cyan",
+    "email": "cyan@gmail.com"
+}
+
+### Get given user
+@userId = 100001
+GET {{base}}/users/{{userId}}

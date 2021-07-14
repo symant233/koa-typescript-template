@@ -6,5 +6,5 @@ module.exports = {
   password: 'Test-symant233',
   database: 'test',
   synchronize: true,
-  entities: ['dist/*.entity{.ts,.js}', 'src/models/*.entity{.ts,.js}'],
+  entities: ['dist/*.entity.{ts,js}', 'src/models/*.entity.{ts,js}'],
 };
